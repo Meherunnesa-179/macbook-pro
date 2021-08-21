@@ -73,14 +73,20 @@ document.getElementById('apply-button').addEventListener('click', function () {
     // get user input
     const userInput = document.getElementById('promo-code');
     const userCode = userInput.value;
-    const discount = Number(grandTotal.innerText); 
+    // const discount = Number(grandTotal.innerText); 
     
 
     // check email and password
     if (userCode == 'stevekaku') {
-        
-        grandTotal.innerText= discount - discount* 0.2 ;
-        
+        const primaryPrice = Number(bestPrice.innerText);
+        const extraMemoryCost = Number(memoryCost.innerText);
+        const extraStorageCost = Number(storageCost.innerText);
+        const deliveryCharge = Number(deliveryCost.innerText);
+        const totalCost = 
+        primaryPrice + extraMemoryCost + extraStorageCost + deliveryCharge;
         userInput.value= '';
+        grandTotal.innerText= totalCost - (totalCost* 0.2) ;
+        
+       
     } 
 });
