@@ -7,7 +7,7 @@ primaryMemory.addEventListener("click",function(){
     updateTotal()
 })
 extraMemory.addEventListener("click",function(){
-    memoryCost.innerText = "30";
+    memoryCost.innerText = "180";
     updateTotal()
 })
 // ssd price
