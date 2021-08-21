@@ -54,29 +54,33 @@ const total = document.getElementById('total');
 const grandTotal = document.getElementById('grand-total');
 
 function updateTotal(){
-    primaryPrice = Number(bestPrice.innerText);
+   
+    const primaryPrice = Number(bestPrice.innerText);
     const extraMemoryCost = Number(memoryCost.innerText);
     const extraStorageCost = Number(storageCost.innerText);
     const deliveryCharge = Number(deliveryCost.innerText);
     const totalCost = 
     primaryPrice + extraMemoryCost + extraStorageCost + deliveryCharge;
     total.innerText= totalCost;
-   
     grandTotal.innerText = totalCost;
 }
 
 
-// promo code :( meherun);
+// promo code :
 
 
 document.getElementById('apply-button').addEventListener('click', function () {
     // get user input
     const userInput = document.getElementById('promo-code');
     const userCode = userInput.value;
+    const discount = Number(grandTotal.innerText); 
     
+
     // check email and password
     if (userCode == 'stevekaku') {
-        const discount = Number(grandTotal.innerText) 
+        
         grandTotal.innerText= discount - discount* 0.2 ;
+        
+        userInput.value= '';
     } 
 });
